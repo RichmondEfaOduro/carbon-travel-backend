@@ -3,7 +3,7 @@ import car from "../resources/car.js";
 
 const router = express.Router();
 
-router.get("/car", (req, res) => {
+router.post("/car", (req, res) => {
   //handle req
   res.json(car);
 });
