@@ -1,9 +1,10 @@
 import airports from "../resources/IATA.js";
 
 export const getIATACodes = (req, res, next) => {
-  let airportsToReturn = airports.filter(
-    (airport) => airport.city === req.body.start
-  );
-  req.airportsToReturn = airportsToReturn;
+  const { startIATA, endIATA } = req.body;
+  let startAirport = airports.filter((airport) => airport.IATA === startIATA);
+  let endAirport = airports.filter((airport) => airport.IATA === endIATA);
+  req.startIATA = startAirport;
+  req.endIATA = endAirport;
   next();
 };
