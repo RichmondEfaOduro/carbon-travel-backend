@@ -3,6 +3,7 @@ import cors from "cors";
 import carsRoutes from "./routes/cars.js";
 import flightsRoutes from "./routes/flights.js";
 import calculate from "./routes/calculate.js";
+import iata from "./routes/iata.js";
 import dotenv from "dotenv";
 
 const app = express();
@@ -11,6 +12,7 @@ app.use(cors());
 dotenv.config();
 
 app.use("/api/v1/", calculate);
+app.use("/api/v1/", iata);
 app.use("/api/v1/", carsRoutes);
 app.use("/api/v1/", flightsRoutes);
 
